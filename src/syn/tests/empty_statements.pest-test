@@ -1,0 +1,38 @@
+valid_empty_file: Empty file is valid.
+===
+
+===
+(file)
+
+
+valid_semicolons_only: File made up of only semicolons is valid.
+===
+;;;;;;;
+;;
+;
+;;
+;;
+;
+===
+(file
+  (SEMICOLON)
+  (SEMICOLON)
+  (SEMICOLON)
+  (SEMICOLON)
+  (SEMICOLON)
+  (SEMICOLON)
+  (SEMICOLON)
+  (WHITESPACE)
+  (SEMICOLON)
+  (SEMICOLON)
+  (WHITESPACE)
+  (SEMICOLON)
+  (WHITESPACE)
+  (SEMICOLON)
+  (SEMICOLON)
+  (WHITESPACE)
+  (SEMICOLON)
+  (SEMICOLON)
+  (WHITESPACE)
+  (SEMICOLON)
+)

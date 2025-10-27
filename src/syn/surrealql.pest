@@ -1,0 +1,46 @@
+
+
+file = {
+  SOI ~
+  ((SEMICOLON | NEWLINE) | statement ~ (SEMICOLON | NEWLINE)?)* ~
+  EOI
+}
+
+statement = {
+  use_stmt
+  // | nan
+  // | infinity
+  | identifier
+  | ERROR
+}
+
+// // Special values
+// nan = { "NaN" }
+// infinity = { "Infinity" }
+
+// Identifiers
+identifier = @{ ASCII_ALPHANUMERIC+ }
+
+// ========== Statements ==========
+
+// ------- Use Statement -------
+use_stmt = { use_ns_db_stmt | use_ns_stmt | use_db_stmt }
+use_ns_stmt = {KW_USE ~ KW_NAMESPACE ~ identifier ~ EOS }
+use_db_stmt = { KW_USE ~ KW_DATABASE ~ identifier ~ EOS }
+use_ns_db_stmt = { KW_USE ~ KW_NAMESPACE ~ identifier ~ KW_DATABASE ~ identifier ~ EOS }
+
+// Keywords
+KW_USE = { ^"USE" }
+KW_NAMESPACE = { ^"NAMESPACE" | ^"NS" }
+KW_DATABASE = { ^"DATABASE" | ^"DB" }
+
+// ------- End of Use Statement -------
+
+// ========== End of Statements ==========
+
+/// End of statement delimiter
+EOS = _{ SEMICOLON | NEWLINE | EOI }
+ERROR = { (!EOS ~ ANY)+ } 
+SEMICOLON = { ";" }
+NEWLINE = { "\n" | "\r\n"  | "\r" }
+WHITESPACE = { " " | "\t" | NEWLINE }

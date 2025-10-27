@@ -1,0 +1,53 @@
+{
+  "name": "surrealls",
+  "displayName": "SurrealDB Language Server",
+  "description": "Power up your SurrealDB experience",
+  "version": "0.0.1",
+  "publisher": "msanchezdev",
+  "type": "commonjs",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/msanchezdev/surrealls.git"
+  },
+  "scripts": {
+    "build": "tsc -b"
+  },
+  "main": "./out/extension",
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "dependencies": {
+    "@types/node": "^24.9.1",
+    "vscode-languageclient": "^9.0.1"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.2.6",
+    "@types/vscode": "^1.105.0",
+    "typescript": "^5"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "engines": {
+    "vscode": "^1.93.0"
+  },
+  "categories": [
+    "Programming Languages",
+    "Formatters",
+    "Snippets",
+    "Linters"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "surrealls.restart",
+        "title": "SurrealDB: Restart Language Server"
+      }
+    ],
+    "configuration": {
+      "title": "SurrealDB",
+      "type": "object",
+      "properties": {}
+    }
+  }
+}

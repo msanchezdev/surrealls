@@ -1,0 +1,9 @@
+simple: Simple identifier
+=======
+test
+=======
+(file
+  (statement
+    (identifier: "test")
+  )
+)

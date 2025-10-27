@@ -1,0 +1,61 @@
+namespace: Use namespace
+=======
+USE NAMESPACE test
+=======
+(file
+  (statement
+    (use_stmt
+      (use_ns_stmt
+        (KW_USE)
+        (WHITESPACE)
+        (KW_NAMESPACE)
+        (WHITESPACE)
+        (identifier: "test")
+      )
+    )
+  )
+)
+
+
+
+database: Use database
+=======
+USE DATABASE test
+=======
+(file
+  (statement
+    (use_stmt
+      (use_db_stmt
+        (KW_USE)
+        (WHITESPACE)
+        (KW_DATABASE)
+        (WHITESPACE)
+        (identifier: "test")
+      )
+    )
+  )
+)
+
+
+
+mixed: Mixed use statements
+=======
+USE NAMESPACE myns DATABASE mydb
+=======
+(file
+  (statement
+    (use_stmt
+      (use_ns_db_stmt
+        (KW_USE)
+        (WHITESPACE)
+        (KW_NAMESPACE)
+        (WHITESPACE)
+        (identifier: "myns")
+        (WHITESPACE)
+        (KW_DATABASE)
+        (WHITESPACE)
+        (identifier: "mydb")
+      )
+    )
+  )
+)

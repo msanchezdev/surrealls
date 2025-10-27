@@ -1,0 +1,19 @@
+{
+  "configurations": [
+    {
+      // Used for testing the extension with a local build of the LSP server (in `target/debug`).
+      "name": "Run Extension (Debug)",
+      "type": "extensionHost",
+      "request": "launch",
+      "args": [
+        "--extensionDevelopmentPath=${workspaceFolder}/editors/code",
+        "--disable-extensions",
+        "--log rust-lang.rust-analyzer:debug"
+      ],
+      "outFiles": [
+        "${workspaceFolder}/editors/code/out/**/*.js",
+      ],
+      "preLaunchTask": "Build Server and Extension"
+    }
+  ]
+}
